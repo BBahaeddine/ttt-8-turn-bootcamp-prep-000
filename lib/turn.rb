@@ -35,4 +35,15 @@ end
 def turn(board)
   puts "Please enter 1-9:"
   index = gets.strip
+  index_i = index.to_i
+  if index_i is valid
+    move(board, index_i, "X")
+  else
+    until index_i is valid
+      puts "Please enter 1-9"
+      index = get.strip
+      index_i = index.to_i
+    end
+    move(board, index_i, "X")
+  end
 end
